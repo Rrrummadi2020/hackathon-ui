@@ -10,7 +10,7 @@
             <tr *ngFor="let ele of questionList" >
                 <td>{{ele.question}}</td>
                 <td> <button class="btn btn-primary" (click)="editQuestion(ele.id)" >Edit</button></td>
-                <td> <button class="btn btn-danger" (click)="deleteQuestion(ele.id)" >Delete</button></td>
+                <!-- <td> <button class="btn btn-danger" (click)="deleteQuestion(ele.id)" >Delete</button></td> -->
             </tr>
         </tbody>
       </table>
@@ -19,6 +19,6 @@
 <ng-template #elsePart>
     No Record Present
     <button class="btn btn-danger" type="button" routerLink="/subjects">Go To Subjects</button>
-    <button class="btn btn-danger" type="button" [routerLink]="['/question',subjectId]">Create Question</button>
-</ng-template>
+  </ng-template>
+  <button class="btn btn-danger" type="button" [routerLink]="['/question',subjectId]">Create Question</button>
 
