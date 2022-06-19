@@ -1,0 +1,24 @@
+<ng-container *ngIf="questionList?.length>0;else elsePart">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Question </th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ele of questionList" >
+                <td>{{ele.question}}</td>
+                <td> <button class="btn btn-primary" (click)="editQuestion(ele.id)" >Edit</button></td>
+                <td> <button class="btn btn-danger" (click)="deleteQuestion(ele.id)" >Delete</button></td>
+            </tr>
+        </tbody>
+      </table>
+
+</ng-container>
+<ng-template #elsePart>
+    No Record Present
+    <button class="btn btn-danger" type="button" routerLink="/subjects">Go To Subjects</button>
+    <button class="btn btn-danger" type="button" [routerLink]="['/question',subjectId]">Create Question</button>
+</ng-template>
+
